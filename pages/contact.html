@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lyfro09 — Контакты</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+        <button class="theme-btn" id="themeToggle" type="button" aria-label="Сменить тему">
+  🌙
+</button>
+
+      <a class="logo" href="../index.html">lyfro09</a>
+      <div class="nav-links">
+        <a href="../index.html">Главная</a>
+        <a href="about.html">Обо мне</a>
+        <a href="projects.html">Проекты</a>
+        <a href="contact.html">Контакты</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="section">
+        <h1>Контакты</h1>
+        <p class="muted">Пиши — отвечу, как смогу 🙂</p>
+      </section>
+
+      <section class="section grid-2">
+        <div class="card">
+          <h2>Напиши мне</h2>
+          <p class="muted">Самые быстрые способы связи:</p>
+
+          <p style="margin: 12px 0 6px;">
+            Telegram:
+            <a class="accent" href="https://t.me/lyfro09" target="_blank" rel="noopener">t.me/lyfro09</a>
+          </p>
+
+          <p style="margin: 0;">
+            GitHub:
+            <a class="accent" href="https://github.com/lyfro09" target="_blank" rel="noopener">github.com/lyfro09</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Форма (демо)</h2>
+          <p class="muted">Без сервера, просто пример.</p>
+
+          <form onsubmit="event.preventDefault(); alert('Отправлено (демо)');">
+            <div style="display:grid; gap:10px;">
+              <input type="text" placeholder="Имя" required
+                style="padding:12px;border-radius:14px;border:1px solid var(--stroke);background:rgba(0,0,0,.22);color:var(--text);">
+              <textarea rows="5" placeholder="Сообщение" required
+                style="padding:12px;border-radius:14px;border:1px solid var(--stroke);background:rgba(0,0,0,.22);color:var(--text);"></textarea>
+              <button class="btn primary" type="submit">Отправить</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> lyfro09</p>
+      <a class="btn" href="../index.html">На главную</a>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
