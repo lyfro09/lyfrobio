@@ -332,3 +332,6 @@ if (form) {
     });
   });
 })();
+
+devlogBtn.addEventListener("click", () => devlogOverlay.classList.add("show"));
+devlogClose.addEventListener("click", () => devlogOverlay.classList.remove("show"));
