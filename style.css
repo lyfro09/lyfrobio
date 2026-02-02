@@ -380,24 +380,29 @@ body.lock{
   background: rgba(255,255,255,0.07);
 }
 
-/* ===== Светлая тема ===== */
+/* ===== СВЕТЛАЯ ТЕМА (FIX) ===== */
 body.light{
-  --bg: #f6f7fb;
-  --card: rgba(0,0,0,0.05);
-  --card2: rgba(0,0,0,0.07);
-  --text: rgba(10, 14, 25, 0.92);
-  --muted: rgba(10, 14, 25, 0.62);
-  --stroke: rgba(10, 14, 25, 0.12);
-  --shadow: 0 12px 30px rgba(0,0,0,0.12);
+  --bg: #e9edf3;   /* светло-серый фон */
+
+  --card: #ffffff;
+  --card2: #f9fafc;
+
+  --text: #0f172a;
+  --muted: #475569;
+
+  --stroke: rgba(15,23,42,0.12);
+  --shadow: 0 10px 24px rgba(15,23,42,0.10);
 }
 
-/* фон для светлой темы (чтобы не было слишком тёмных пятен) */
+
+/* фон страницы в светлой теме */
 body.light{
   background:
-    radial-gradient(1000px 600px at 15% 0%, rgba(124,92,255,0.20), transparent 55%),
-    radial-gradient(900px 700px at 90% 20%, rgba(32,211,255,0.14), transparent 55%),
+    radial-gradient(900px 500px at 10% 0%, rgba(124,92,255,0.12), transparent 55%),
+    radial-gradient(800px 600px at 90% 20%, rgba(32,211,255,0.10), transparent 55%),
     var(--bg);
 }
+
 
 /* курсор как в терминале */
 .caret{
@@ -416,4 +421,521 @@ body.light{
 
 @media (prefers-reduced-motion: reduce){
   .caret{ animation: none; }
+}
+
+/* карточки в светлой теме */
+body.light.card{
+  background: linear-gradient(180deg, var(--card), var(--card2));
+  border-color: rgba(15,23,42,0.10);
+}
+
+/* кнопки в светлой теме */
+body.light .btn{
+  background: rgba(15,23,42,0.04);
+}
+
+body.light .btn.primary{
+  background: linear-gradient(
+    90deg,
+    rgba(124,92,255,0.95),
+    rgba(32,211,255,0.85)
+  );
+  color: #ffffff;
+}
+
+
+body.light .btn:hover{
+  background: rgba(15,23,42,0.08);
+}
+
+/* текст и ссылки */
+body.light .muted{
+  color: var(--muted);
+}
+
+body.light a{
+  color: #1e40af; /* синий, но не ядовитый */
+}
+
+body.light .nav-links a{
+  color: #334155;
+}
+
+body.light .nav-links a.active{
+  background: rgba(15,23,42,0.06);
+}
+
+/* ===== FIX: hover primary-кнопки в светлой теме ===== */
+body.light .btn.primary:hover{
+  background: linear-gradient(
+    90deg,
+    rgba(124,92,255,0.85),
+    rgba(32,211,255,0.75)
+  );
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(124,92,255,0.25);
+}
+
+/* убираем общий hover для primary */
+body.light .btn.primary:hover{
+  border-color: transparent;
+}
+
+/* FIX: убираем тёмную линию у primary-кнопки */
+.btn.primary{
+  border: 0;
+  outline: 0;
+  overflow: hidden;        /* чтобы градиент ровно по радиусу */
+  background-clip: padding-box;
+}
+
+/* ===== ФУТЕР В СВЕТЛОЙ ТЕМЕ ===== */
+body.light footer{
+  background: linear-gradient(
+    180deg,
+    rgba(15,23,42,0.02),
+    rgba(15,23,42,0.035)
+  );
+  border-top: 1px solid rgba(15,23,42,0.05);
+  color: #64748b;
+}
+
+body.light footer,
+body.light footer .muted{
+  color: #94a3b8;
+}
+
+body.light footer .btn{
+  background: rgba(15,23,42,0.03);
+  color: #475569;
+}
+
+body.light footer .btn:hover{
+  background: rgba(15,23,42,0.06);
+}
+
+body.light footer{
+  background: transparent;
+  border-top: 1px solid rgba(15,23,42,0.04);
+}
+
+/* ===== Preloader в светлой теме ===== */
+body.light .preloader{
+  background:
+    radial-gradient(900px 500px at 12% 0%, rgba(124,92,255,0.10), transparent 60%),
+    radial-gradient(800px 600px at 88% 18%, rgba(32,211,255,0.08), transparent 60%),
+    rgba(233, 237, 243, 0.96);
+}
+
+body.light .preloader-box{
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(15,23,42,0.08);
+  box-shadow: 0 18px 40px rgba(15,23,42,0.10);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
+
+body.light .type-line{
+  color: #0f172a;
+}
+
+body.light .preloader-sub{
+  color: #64748b;
+}
+
+body.light .caret{
+  border-left-color: rgba(15,23,42,0.75);
+}
+
+.type-line{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* ===== Form validation styles ===== */
+.contact-form .is-error{
+  border-color: rgba(239,68,68,0.65) !important; /* красный */
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.15);
+}
+
+.contact-form .form-error{
+  color: rgba(239,68,68,0.95) !important;
+}
+
+.contact-form .form-ok{
+  color: rgba(34,197,94,0.95) !important;
+}
+
+/* В светлой теме делаем поля не такими тёмными */
+body.light .contact-form input,
+body.light .contact-form textarea{
+  background: rgba(15,23,42,0.03) !important;
+  color: var(--text) !important;
+}
+
+footer{
+  padding: 18px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 -6px 20px rgba(0,0,0,0.25);
+}
+
+
+.footer-left{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-version{
+  font-size: 12px;
+  opacity: .55;
+}
+
+body.light footer{
+  border-top: 1px solid rgba(15,23,42,0.06);
+  box-shadow: 0 -4px 12px rgba(15,23,42,0.08);
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ===== Devlog ===== */
+.footer-version{
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 12px;
+  opacity: .55;
+  cursor: pointer;
+  padding: 0;
+}
+
+.footer-version:hover{
+  opacity: .85;
+  text-decoration: underline;
+}
+
+.devlog-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.80);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.devlog{
+  max-width: 420px;
+  width: calc(100% - 32px);
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.devlog h3{
+  margin-top: 0;
+}
+
+.devlog ul{
+  padding-left: 18px;
+  margin: 12px 0 20px;
+}
+
+.devlog li{
+  margin-bottom: 6px;
+}
+
+/* ===== Devlog tabs ===== */
+.devlog-tabs{
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.devlog-tab{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--stroke);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+  opacity: .7;
+}
+
+.devlog-tab.active{
+  opacity: 1;
+  background: rgba(124,92,255,0.15);
+  border-color: rgba(124,92,255,0.4);
+}
+
+.devlog-content{
+  display: none;
+  margin-top: 10px;
+}
+
+.devlog-content.active{
+  display: block;
+}
+
+.devlog-content ul{
+  padding-left: 18px;
+  margin: 0;
+}
+
+.devlog-content li{
+  margin: 6px 0;
+}
+
+/* светлая тема */
+body.light .devlog-tab{
+  background: rgba(15,23,42,0.04);
+}
+
+body.light .devlog-tab.active{
+  background: rgba(124,92,255,0.12);
+}
+
+.devlog-tab.current{
+  box-shadow: 0 0 0 3px rgba(124,92,255,0.12);
+}
+
+.devlog-badge{
+  margin-left: 8px;
+  font-size: 10px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(124,92,255,0.45);
+  background: rgba(124,92,255,0.14);
+  color: var(--text);
+  opacity: .95;
+}
+
+/* в тёмной теме бейдж чуть ярче читается */
+body:not(.light) .devlog-badge{
+  color: rgba(255,255,255,0.9);
+}
+
+/* в светлой теме бейдж мягче */
+body.light .devlog-badge{
+  color: #0f172a;
+  background: rgba(124,92,255,0.10);
+}
+
+.devlog-tab{
+  display: inline-flex;
+  align-items: center;   /* ← выравнивание по центру */
+  gap: 8px;              /* вместо margin у badge */
+}
+
+.devlog-badge{
+  margin-left: 0;        /* больше не нужен */
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;        /* убирает “прыжки” */
+  transform: translateY(-0.5px); /* микро-подстройка, если надо */
+}
+
+/* ===== Fix: project cards link color ===== */
+.project-link{
+  color: inherit;
+}
+
+.project-link h2,
+.project-link p{
+  color: inherit;
+}
+
+.project-link,
+.project-link:visited,
+.project-link:hover,
+.project-link:active{
+  color: inherit;
+  text-decoration: none;
+}
+
+body.light .project-link{
+  color: #0f172a;
+}
+
+body.light .projects a{
+  color: #0f172a;
+  text-decoration: none;
+}
+
+/* Fix: logo color in light theme */
+body.light .logo{
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.preloader-page{
+  height: 100vh;
+  background: var(--bg);
+}
+
+.preloader{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Devlog button text — white in dark theme */
+body:not(.light) .devlog .btn{
+  color: #ffffff;
+}
+
+.nav-link.active{
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* ===== Devlog animation ===== */
+
+/* ===== Devlog animation (FIXED) ===== */
+
+/* overlay всегда в DOM */
+.devlog-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease;
+  z-index: 999;
+}
+
+/* когда открыт */
+.devlog-overlay.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* окно */
+.devlog{
+  background: var(--card);
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid var(--stroke);
+
+  transform: translateY(10px) scale(0.96);
+  opacity: 0;
+
+  transition:
+    transform .22s ease,
+    opacity .22s ease;
+}
+
+/* анимация появления */
+.devlog-overlay.show .devlog{
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* ===== Devlog version switch animation ===== */
+.devlog-content{
+  display: none;
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.devlog-content.active{
+  display: block;
+  animation: devlogFadeIn .18s ease both;
+}
+
+@keyframes devlogFadeIn{
+  from{
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Roadmap (devlog) ===== */
+.devlog-roadmap{
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--stroke);
+}
+
+.roadmap-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.roadmap-head h4{
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: .2px;
+  opacity: .9;
+}
+
+.roadmap-tag{
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(124,92,255,0.35);
+  background: rgba(124,92,255,0.12);
+  opacity: .9;
+}
+
+.roadmap-card{
+  padding: 12px 12px 10px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.03);
+}
+
+body.light .roadmap-card{
+  background: rgba(15,23,42,0.03);
+}
+
+.roadmap-version{
+  display: inline-block;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.18);
+  margin-bottom: 10px;
+}
+
+body.light .roadmap-version{
+  background: rgba(15,23,42,0.06);
+  border-color: rgba(15,23,42,0.08);
+}
+
+.roadmap-list{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.roadmap-list li{
+  margin: 6px 0;
+  font-size: 13px;
+  opacity: .78;
+}
+
+#devlogClose{
+  margin-top: 16px;
 }

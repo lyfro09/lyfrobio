@@ -61,12 +61,66 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> lyfro09</p>
-      <a class="btn" href="projects.html">К проектам</a>
+    <footer>
+    <div class="footer-left">
+      <span>© 2026 lyfro09</span>
+       <button class="footer-version" id="devlogBtn" type="button">v2.0</button>
     </div>
+
+    <a class="btn" href="#contacts">Контакты</a>
   </footer>
+  <div class="devlog-overlay" id="devlogOverlay">
+    <div class="devlog">
+      <h3 style="margin-top:0;">Devlog</h3>
+
+      <div class="devlog-tabs">
+        <button class="devlog-tab active current" data-tab="v2">
+  v2.0 <span class="devlog-badge">CURRENT</span>
+</button>
+        <button class="devlog-tab" data-tab="v1">v1.0</button>
+      </div>
+
+      <div class="devlog-content active" id="devlog-v2">
+        <ul>
+          <li>Улучшена светлая тема (фон, кнопки, контраст)</li>
+          <li>Проекты стали кликабельными + hover-сводка</li>
+          <li>Добавлен Telegram-канал в раздел «Проекты»</li>
+          <li>Форма контактов: email + проверка ошибок</li>
+          <li>Защита от спама и ботов в формах</li>
+          <li>Футер: версия сайта + devlog</li>
+          <li>Preloader перенесен на отдельную страницу</li>
+       </ul>
+      </div>
+
+      <div class="devlog-content" id="devlog-v1">
+        <ul>
+          <li>Первый релиз сайта</li>
+          <li>Главная страница и базовый дизайн</li>
+          <li>Разделы «Проекты» и «Контакты» (демо)</li>
+          <li>Тёмная тема</li>
+          <li>Общая структура сайта</li>
+        </ul>
+      </div>
+<div class="devlog-roadmap">
+  <div class="roadmap-head">
+    <h4>Планируется</h4>
+  </div>
+
+  <div class="roadmap-card">
+    <div class="roadmap-version">v2.1</div>
+
+    <ul class="roadmap-list">
+      <li>Мелкие UI-фиксы и полировка светлой темы</li>
+      <li>Улучшение анимаций и микро-UX</li>
+      <li>Дополнение проектов и описаний</li>
+    </ul>
+  </div>
+</div>
+
+
+<button class="btn" id="devlogClose" type="button">Закрыть</button>     
+    </div>
+  </div>  
 
   <script src="../main.js"></script>
 </body>

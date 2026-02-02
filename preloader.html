@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loading…</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="preloader-page">
+
+  <div class="preloader">
+    <div class="preloader-box">
+      <div class="type-line">
+        <span id="typeText"></span><span class="caret" aria-hidden="true"></span>
+      </div>
+        <p class="preloader-sub muted" id="preloaderHint" style="margin:10px 0      0;">
+          Нажми, чтобы пропустить
+            </p>
+
+    </div>
+  </div>
+
+  <script>
+  // если уже заходил — сразу на главную
+  if (localStorage.getItem("visited")) {
+    window.location.replace("index.html");
+  }
+
+  const lines = [
+    "> initializing profile: lyfro09...",
+    "> compiling assets... done.",
+    "> ready. welcome."
+  ];
+
+  const el = document.getElementById("typeText");
+  const hint = document.getElementById("preloaderHint");
+
+  let lineIndex = 0;
+  let charIndex = 0;
+
+  let speed = 45;        // медленнее
+  const minSpeed = 22;
+  const accel = 0.94;
+
+  const getDelay = (ch) => {
+    speed = Math.max(minSpeed, speed * accel);
+    let d = speed + Math.random() * 14;
+
+    if (ch === " ") d *= 0.6;
+    if (".,;:!?".includes(ch)) d += 80;
+    if (ch === ">") d += 90;
+
+    return d;
+  };
+
+  const finish = () => {
+    localStorage.setItem("visited", "true");
+    window.location.replace("index.html");
+  };
+
+  // пропуск
+  const skip = () => finish();
+
+  document.addEventListener("click", skip, { once: true });
+  window.addEventListener("keydown", (e) => {
+    if (["Escape", "Enter", " "].includes(e.key)) skip();
+  }, { once: true });
+
+  function type() {
+    const line = lines[lineIndex];
+
+    if (!line) {
+      finish();
+      return;
+    }
+
+    const ch = line[charIndex];
+
+    if (ch !== undefined) {
+      el.textContent = line.slice(0, charIndex + 1);
+      charIndex++;
+      setTimeout(type, getDelay(ch));
+    } else {
+      lineIndex++;
+      charIndex = 0;
+      speed = 45;
+      setTimeout(type, 420);
+    }
+  }
+
+  type();
+</script>
+
+
+</body>
+</html>
