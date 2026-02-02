@@ -965,7 +965,7 @@ body.light .roadmap-version{
 
 .devlog{
   width: min(760px, calc(100vw - 32px));
-  max-height: 80vh;
+  max-height: none;
   overflow: auto;
 
   border: 1px solid var(--stroke);
