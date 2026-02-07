@@ -130,7 +130,7 @@ h2{
 .cards{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 16px;
 }
 
 .btn{
@@ -981,4 +981,75 @@ body.light .roadmap-version{
 .devlog-overlay.show .devlog{
   transform: translateY(0) scale(1);
   opacity: 1;
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Telegram в новый ряд (4-я карточка) */
+.cards .telegram-card{
+  grid-column: 1 / 2; /* станет первой в новой строке */
+}
+
+/* ===== v2.1: белая тема ===== */
+html.light{
+  --bg: #e9edf3;        /* фон чуть глубже, чем белый */
+  --card: #ffffff;      /* карточки чисто белые */
+  --stroke: rgba(15,23,42,0.10);
+  --text: #0f172a;
+  --muted: rgba(15,23,42,0.68);
+}
+
+/* ссылки в светлой теме */
+html.light a{
+  color: inherit;
+}
+
+/* ===== v2.1: micro UX for cards ===== */
+.project-card{
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.project-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(124,92,255,0.35);
+}
+
+.project-card:active{
+  transform: translateY(-1px);
+}
+
+.btn{
+  transition: transform .16s ease, box-shadow .16s ease, opacity .16s ease;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+}
+
+.btn:active{
+  transform: translateY(0);
+}
+
+html.light .card{
+  box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* все обычные проекты */
+.project-card{
+  order: 1;
+}
+
+.telegram-card{
+  grid-column: auto !important;
+  grid-row: auto !important;
 }

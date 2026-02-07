@@ -23,133 +23,190 @@
     </nav>
   </header>
 
-  <main class="main">
-    <div class="container">
-      <section class="section">
-        <h1>Проекты</h1>
-        <p class="muted">Список того, что я сделал (и что делаю сейчас).</p>
-      </section>
+ <main class="main">
+  <div class="container">
 
-      <section class="section cards">
-        <article class="card project-card">
+    <section class="section">
+      <h1>Проекты</h1>
+      <p class="muted">Список того, что я сделал (и что делаю сейчас).</p>
+    </section>
+
+    <!-- ВАЖНО: все карточки в одном grid-контейнере -->
+    <section class="section cards">
+
+      <!-- 1) NoTrail -->
+      <article class="card project-card">
+        <a href="https://lyfro09.github.io/NoTrace/" class="project-link">
+          <h2 style="margin-top:0;">NoTrail</h2>
+          <p class="muted">Приватный браузер без цифровых следов.</p>
+
+          <div class="project-hover">
+            <p>
+              Это концепт приватного браузера без трекинга, логов и сбора пользовательских данных.
+            </p>
+            <span class="project-cta">Открыть проект →</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="card project-card">
   <a
-    href="https://lyfro09.github.io/lyfrobio/"
-    target="_blank"
-    rel="noopener"
+    href="https://t.me/lyfro09bio_bot"
     class="project-link"
   >
-    <h2 style="margin-top:0;">Многостраничный сайт</h2>
-    <p class="muted">HTML • CSS • JS</p>
+    <h2 style="margin-top:0;">Python-бот</h2>
+    <p class="muted">Python • Telegram Bot</p>
 
-    <!-- hover-сводка -->
     <div class="project-hover">
       <p>
-        Многостраничный сайт с общей навигацией,
-        единой стилизацией и продуманной структурой папок.
+        Учебный Telegram-бот на Python.
+        Реализованы команды, обработка сообщений и логика ответов.
       </p>
       <span class="project-cta">Открыть проект →</span>
     </div>
   </a>
 </article>
-<article class="card project-card">
-  <a
-    href="https://lyfro09.github.io/firstpjlyfro09/"
-    target="_blank"
-    rel="noopener"
-    class="project-link"
-  >
-    <h2 style="margin-top:0;">Первый сайт</h2>
-    <p class="muted">HTML • CSS</p>
 
-    <div class="project-hover">
-      <p>
-        Первый опыт в веб-разработке:
-        старт с полного нуля, первые ошибки
-        и освоение HTML и CSS.
-      </p>
-      <span class="project-cta">Посмотреть →</span>
-    </div>
-  </a>
-</article>
-<article class="card project-card">
-  <a
-    href="https://t.me/lyfro09_code"
-    target="_blank"
-    rel="noopener"
-    class="project-link"
-  >
-    <h2 style="margin-top:0;">Telegram-канал</h2>
-    <p class="muted">Новости • процесс • апдейты</p>
+      <!-- 2) Многостраничный сайт -->
+      <article class="card project-card">
+        <a
+          href="https://lyfro09.github.io/lyfrobio/"
+          target="_blank"
+          rel="noopener"
+          class="project-link"
+        >
+          <h2 style="margin-top:0;">Многостраничный сайт</h2>
+          <p class="muted">HTML • CSS • JS</p>
 
-    <div class="project-hover">
-      <p>
-        Больше информации о моих работах,
-        процессе разработки и обновлениях проектов.
-      </p>
-      <span class="project-cta">Перейти в канал →</span>
-    </div>
-  </a>
-</article>
-      </section>
-    </div>
-  </main>
+          <div class="project-hover">
+            <p>
+              Многостраничный сайт с общей навигацией,
+              единой стилизацией и продуманной структурой папок.
+            </p>
+            <span class="project-cta">Открыть проект →</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- 3) Первый сайт -->
+      <article class="card project-card">
+        <a
+          href="https://lyfro09.github.io/firstpjlyfro09/"
+          target="_blank"
+          rel="noopener"
+          class="project-link"
+        >
+          <h2 style="margin-top:0;">Первый сайт</h2>
+          <p class="muted">HTML • CSS</p>
+
+          <div class="project-hover">
+            <p>
+              Первый опыт в веб-разработке:
+              старт с полного нуля, первые ошибки
+              и освоение HTML и CSS.
+            </p>
+            <span class="project-cta">Открыть проект →</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- 4) Telegram (второй ряд, такой же размер) -->
+      <article class="card project-card telegram-card">
+        <a
+          href="https://t.me/lyfro09_code"
+          target="_blank"
+          rel="noopener"
+          class="project-link"
+        >
+          <h2 style="margin-top:0;">Telegram-канал</h2>
+          <p class="muted">Новости • процесс • апдейты</p>
+
+          <div class="project-hover">
+            <p>
+              Больше информации о моих работах,
+              процессе разработки и обновлениях проектов.
+            </p>
+            <span class="project-cta">Перейти в канал →</span>
+          </div>
+        </a>
+      </article>
+
+    </section>
+
+  </div>
+</main>
+
   <footer>
-    <div class="footer-left">
-      <span>© 2026 lyfro09</span>
-       <button class="footer-version" id="devlogBtn" type="button">v2.0</button>
+  <div class="footer-left">
+    <span>© 2026 lyfro09</span>
+    <button class="footer-version" id="devlogBtn" type="button">v2.1</button>
+  </div>
+</footer>
+
+<div class="devlog-overlay" id="devlogOverlay">
+  <div class="devlog">
+    <h3 style="margin-top:0;">Devlog</h3>
+
+    <div class="devlog-tabs">
+      <button class="devlog-tab active current" data-tab="v21">
+        v2.1 <span class="devlog-badge">CURRENT</span>
+      </button>
+      <button class="devlog-tab" data-tab="v2">v2.0</button>
+      <button class="devlog-tab" data-tab="v1">v1.0</button>
     </div>
-  <div class="devlog-overlay" id="devlogOverlay">
-    <div class="devlog">
-      <h3 style="margin-top:0;">Devlog</h3>
 
-      <div class="devlog-tabs">
-        <button class="devlog-tab active current" data-tab="v2">
-  v2.0 <span class="devlog-badge">CURRENT</span>
-</button>
-        <button class="devlog-tab" data-tab="v1">v1.0</button>
+    <!-- v2.1 -->
+    <div class="devlog-content active" id="devlog-v21">
+      <ul>
+        <li>Мелкие UI-фиксы и полировка светлой темы</li>
+        <li>Улучшение анимаций и микро-UX</li>
+        <li>Дополнение проектов и описаний</li>
+      </ul>
+    </div>
+
+    <!-- v2.0 -->
+    <div class="devlog-content" id="devlog-v2">
+      <ul>
+        <li>Улучшена светлая тема (фон, кнопки, контраст)</li>
+        <li>Проекты стали кликабельными + hover-сводка</li>
+        <li>Добавлен Telegram-канал в раздел «Проекты»</li>
+        <li>Форма контактов: email + проверка ошибок</li>
+        <li>Защита от спама и ботов в формах</li>
+        <li>Футер: версия сайта + devlog</li>
+        <li>Preloader перенесён на отдельную страницу</li>
+      </ul>
+    </div>
+
+    <!-- v1.0 -->
+    <div class="devlog-content" id="devlog-v1">
+      <ul>
+        <li>Первый релиз сайта</li>
+        <li>Главная страница и базовый дизайн</li>
+        <li>Разделы «Проекты» и «Контакты» (демо)</li>
+        <li>Тёмная тема</li>
+        <li>Общая структура сайта</li>
+      </ul>
+    </div>
+
+    <!-- Roadmap (следующая версия) -->
+    <div class="devlog-roadmap">
+      <div class="roadmap-head">
+        <h4 style="margin:0;">Планируется</h4>
       </div>
 
-      <div class="devlog-content active" id="devlog-v2">
-        <ul>
-          <li>Улучшена светлая тема (фон, кнопки, контраст)</li>
-          <li>Проекты стали кликабельными + hover-сводка</li>
-          <li>Добавлен Telegram-канал в раздел «Проекты»</li>
-          <li>Форма контактов: email + проверка ошибок</li>
-          <li>Защита от спама и ботов в формах</li>
-          <li>Футер: версия сайта + devlog</li>
-          <li>Preloader перенесен на отдельную страницу</li>
-       </ul>
-      </div>
-
-      <div class="devlog-content" id="devlog-v1">
-        <ul>
-          <li>Первый релиз сайта</li>
-          <li>Главная страница и базовый дизайн</li>
-          <li>Разделы «Проекты» и «Контакты» (демо)</li>
-          <li>Тёмная тема</li>
-          <li>Общая структура сайта</li>
+      <div class="roadmap-card">
+        <div class="roadmap-version">v2.2</div>
+        <ul class="roadmap-list">
+          <li>Новые проекты + превью/скриншоты</li>
+          <li>Ещё полировка светлой темы (контраст/ссылки)</li>
+          <li>Оптимизация и лёгкий рефактор JS</li>
         </ul>
       </div>
-<div class="devlog-roadmap">
-  <div class="roadmap-head">
-    <h4>Планируется</h4>
-  </div>
-
-  <div class="roadmap-card">
-    <div class="roadmap-version">v2.1</div>
-
-    <ul class="roadmap-list">
-      <li>Мелкие UI-фиксы и полировка светлой темы</li>
-      <li>Улучшение анимаций и микро-UX</li>
-      <li>Дополнение проектов и описаний</li>
-    </ul>
-  </div>
-</div>
-
-
-<button class="btn" id="devlogClose" type="button">Закрыть</button>     
     </div>
-  </div>  
+
+    <button class="btn" id="devlogClose" type="button">Закрыть</button>
+  </div>
+</div>   
   <script src="../main.js"></script>
 </body>
 </html>
